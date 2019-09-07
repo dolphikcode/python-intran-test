@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+{% load staticfiles %}
+
+    {% block body_block %}
+    cccc
+    <div class="djangtwo">
+        {% if index_records %}
+            <table>
+                <thead>
+                    <th>Początek</th>
+                    <th>Koniec</th>
+                    <th>Długość</th>
+                    <th>Powód</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    {% for i in index_records %}
+                        <tr>
+                            <td>{{ i.vacation_begining }}</td>
+                            <td>{{ i.vacation_begining }}</td>
+                            <td>{{ i.length }}</td>
+                            <td>{{ i.reason }}</td>
+                            <td>{{ i.status }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>NO ACCESS RECORDS!</p>
+        {% endif %}
+    </div>
+
+    <img src="{% static "images/bieg.jpg" %}" alt="Biegacz">
+
+    {% endblock %}
+
+
+
+
